@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="home :: head" ></head>
+<body>
+<nav th:replace="home :: navbar"  >
+</nav>
+
+<h1>Result</h1>
+<!--<p th:text="'id: ' + ${greeting.id}" />-->
+<table class="table table-striped">
+    <tr>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Rules</th>
+        <th>Wifi</th>
+        <th>Cable</th>
+        <th>Private Bathroom</th>
+        <th>Rented Out</th>
+    </tr>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.roomAddress}"></td>
+        <td th:text="${item.roomCity}"></td>
+        <td th:text="${item.roomState}"></td>
+        <td th:text="'$'+${item.roomPrice}"></td>
+        <td th:text="${item.roomDescription}"></td>
+        <td th:text="${item.roomRules}"></td>
+        <td th:text="${item.roomWifi}"></td>
+        <td th:text="${item.roomCable}"></td>
+        <td th:text="${item.roomBathroom}"></td>
+        <td th:text="${item.roomIsRented}"></td>
+    </tr>
+</table>
+<!--<a href="/greet/greet">Submit another message</a>-->
+</body>
+
+
+</html>
